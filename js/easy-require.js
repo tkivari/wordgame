@@ -1,19 +1,19 @@
 (function() {
-	var modules = {}
-	var require = function(name) {
-		if (defined(name)) {
-			var module = exporter(modules[name], name)
+  var modules = {}
+  var require = function(name) {
+    if (defined(name)) {
+      var module = exporter(modules[name], name)
       return module
-		} else {
+    } else {
       console.log("Module: " + name + " is not defined!")
     }
-	}
+  }
 
-	var define = function(name, definition) {
-		if (!defined(name)) {
-			modules[name] = definition
-		} else { console.log(name + " is already defined") }
-	}
+  var define = function(name, definition) {
+    if (!defined(name)) {
+      modules[name] = definition
+    } else { console.log(name + " is already defined") }
+  }
 
   var exporter = function(def, name) {
     var module = { exports: {} }
@@ -23,12 +23,11 @@
     return module.exports
   }
 
-	var defined = function(name) {
-		return !!modules[name]
-	}
+  var defined = function(name) {
+    return !!modules[name]
+  }
 
   window.require = require
   window.define = define
-
 
 }())
