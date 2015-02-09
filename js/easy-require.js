@@ -12,8 +12,7 @@
 	var define = function(name, definition) {
 		if (!defined(name)) {
 			modules[name] = definition
-		} else { console.log(name + " is already defined")}
-    console.log(definition)
+		} else { console.log(name + " is already defined") }
 	}
 
   var exporter = function(def, name) {
